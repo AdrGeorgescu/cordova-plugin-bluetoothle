@@ -1693,7 +1693,7 @@ public class BluetoothLePlugin extends CordovaPlugin {
       java.lang.reflect.Method localMethod = localBluetoothGatt.getClass().getMethod("refresh");
 
       if (localMethod != null) {
-        boolean bool = ((Boolean) localMethod.invoke(localBluetoothGatt);
+        boolean bool = ((Boolean) localMethod.invoke(localBluetoothGatt));
         return bool;
       }
     }
