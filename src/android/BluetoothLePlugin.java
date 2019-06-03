@@ -1690,10 +1690,10 @@ public class BluetoothLePlugin extends CordovaPlugin {
   private boolean refreshDeviceCache(BluetoothGatt gatt) {
     try {
       BluetoothGatt localBluetoothGatt = gatt;
-      java.lang.reflect.Method localMethod = localBluetoothGatt.getClass().getMethod("refresh");
+      Method localMethod = localBluetoothGatt.getClass().getMethod("refresh", new Class[0]);
 
       if (localMethod != null) {
-        boolean bool = ((Boolean) localMethod.invoke(localBluetoothGatt));
+        boolean bool = ((Boolean) localMethod.invoke(localBluetoothGatt, new Object[0])).booleanValue();
         return bool;
       }
     }
